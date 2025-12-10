@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/stations")
+@RequestMapping("/api")
 @RequiredArgsConstructor
 @CrossOrigin(origins = "*") // 允许前端跨域调用
 public class StationController {
 
     private final StationService stationService;
 
-    @GetMapping("/spatial")
+    @GetMapping("/points")
     public Result<GeoJsonFeatureCollection> getSpatialData() {
         GeoJsonFeatureCollection data = stationService.getAllStationsAsGeoJson();
         return Result.success(data);
