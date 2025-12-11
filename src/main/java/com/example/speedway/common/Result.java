@@ -1,8 +1,10 @@
 package com.example.speedway.common;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.Data;
 
 @Data
+@JsonPropertyOrder({"code","msg","data"})
 public class Result<T> {
     private Integer code; // 200: 成功, 500: 失败
     private String msg;   // 提示信息
